@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<body>
+<!--begin::Wrapper-->
+<div th:fragment="wrapper" class="d-flex flex-column flex-row-fluid wrapper" id="kt_wrapper">
+    <!--begin::Content-->
+    <div class="content  d-flex flex-column flex-column-fluid" id="kt_content">
+        <!--begin::Subheader-->
+        <div class="subheader py-3 py-lg-8  subheader-transparent " id="kt_subheader">
+            <div class=" container  d-flex align-items-center justify-content-between flex-wrap flex-sm-nowrap">
+                <!--begin::Info-->
+                <div class="d-flex align-items-center flex-wrap mr-1">
+
+                    <!--begin::Page Heading-->
+                    <div class="d-flex align-items-baseline flex-wrap mr-5">
+                        <!--begin::Page Title-->
+                        <h2 class=" my-1 mr-3">
+                            <span class="subheader-title text-dark font-weight-bold" th:text="${model != null ? model.subheader : subheader}" th:remove="tag"></span>
+                            <span class="subheader-title text-muted text-dark font-weight-bold" th:text="${model != null && model.mutedHeader != null ? '| ' + model.mutedHeader : ''}"></span>
+                        </h2>
+                        <!--end::Page Title-->
+
+                    </div>
+                    <!--end::Page Heading-->
+                </div>
+                <!--end::Info-->
+
+                <!--begin::Toolbar-->
+                <div layout:fragment="right-floating-toolbar" class="class-from-content-wrapper">
+
+                </div>
+                <!--end::Toolbar-->
+            </div>
+        </div>
+        <!--end::Subheader-->
+
+        <!--begin::Entry-->
+        <div class="d-flex flex-column-fluid real-content">
+            <!--begin::Container-->
+            <div layout:fragment="content">
+                <p>from main layout</p>
+            </div>
+            <!--end::Container-->
+        </div>
+        <!--end::Entry-->
+    </div>
+    <!--end::Content-->
+</div>
+<!--end::Wrapper-->
+
+</body>
+
+</html>

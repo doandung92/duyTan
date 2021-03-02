@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<body>
+<!--begin::Aside-->
+<div th:fragment="aside" class="aside aside-left d-flex  aside-fixed " id="kt_aside">
+    <!--begin::Primary-->
+    <div class="aside-primary d-flex flex-column align-items-center flex-row-auto">
+        <!--begin::Brand-->
+        <div class="aside-brand d-flex flex-column align-items-center flex-column-auto py-5 py-lg-12">
+            <!--begin::Logo-->
+            <a href="/">
+                <img th:src="'/assets/media/image/logo.jpg'" class="logo-default w-90px" />
+                <!--Company logo here-->
+            </a>
+            <!--end::Logo-->
+        </div>
+        <!--end::Brand-->
+
+        <!--begin::LEFT SIDE MENU-->
+        <div class="aside-nav d-flex flex-column align-items-center flex-column-fluid py-5 scroll scroll-pull">
+            <!--begin::Nav-->
+            <ul class="nav flex-column" role="tablist">
+                <!--begin::Item-->
+                <!--Daily scrum-->
+                <li class="nav-item mb-3" data-toggle="tooltip" data-placement="right" data-container="body"
+                    data-boundary="window" title="Daily Scrums">
+                    <a href="#" class="nav-link btn btn-icon btn-clean btn-lg active main-menu-item" data-toggle="tab"
+                       data-target="#kt_aside_tab_team" role="tab">
+                        <i class="flaticon2-group"></i>
+                    </a>
+                </li>
+                <!--end::Item-->
+
+                <!--begin::Item-->
+                <!--Weekly PRs-->
+                <li class="nav-item mb-3" data-toggle="tooltip" data-placement="right" data-container="body"
+                    data-boundary="window" title="Weekly PRs">
+                    <a href="#" class="nav-link btn btn-icon btn-clean btn-lg main-menu-item" data-toggle="tab"
+                       data-target="#kt_aside_tab_team" role="tab">
+                        <i class="flaticon2-calendar-7"></i>
+                    </a>
+                </li>
+                <!--end::Item-->
+
+                <!--begin::Item-->
+                <!--Monthly Reviews -->
+                <li class="nav-item mb-3" data-toggle="tooltip" data-placement="right" data-container="body"
+                    data-boundary="window" title="Monthly Reviews">
+                    <a href="#" class="nav-link btn btn-icon btn-clean btn-lg main-menu-item" data-toggle="tab"
+                       data-target="#kt_aside_tab_team" role="tab">
+                        <i class="flaticon2-calendar-8"></i>
+                    </a>
+                </li>
+                <!--end::Item-->
+
+                <!--begin::Item-->
+                <!--Quarterly OKRs-->
+                <li class="nav-item mb-3" data-toggle="tooltip" data-placement="right" data-container="body"
+                    data-boundary="window" title="Quarterly OKRs">
+                    <a href="#" class="nav-link btn btn-icon btn-clean btn-lg main-menu-item" data-toggle="tab"
+                       data-target="#kt_aside_tab_team" role="tab">
+                        <i class="flaticon2-calendar-9"></i>
+                    </a>
+                </li>
+                <!--end::Item-->
+
+                <!--begin::Item-->
+                <!--Assessments-->
+                <li class="nav-item mb-3" data-toggle="tooltip" data-placement="right" data-container="body"
+                    data-boundary="window" title="Assessments">
+                    <a href="#" class="nav-link btn btn-icon btn-clean btn-lg main-menu-item" data-toggle="tab"
+                       data-target="#kt_aside_tab_team" role="tab">
+                        <i class="flaticon2-checkmark"></i>
+                    </a>
+                </li>
+                <!--end::Item-->
+
+                <!--begin::Item-->
+                <!--Reports-->
+                <li class="nav-item mb-3" data-toggle="tooltip" data-placement="right" data-container="body"
+                    data-boundary="window" title="Reports">
+                    <a href="#" class="nav-link btn btn-icon btn-clean btn-lg main-menu-item" data-toggle="tab"
+                       data-target="#kt_aside_tab_team" role="tab">
+                        <i class="flaticon2-crisp-icons"></i>
+                    </a>
+                </li>
+                <!--end::Item-->
+            </ul>
+            <!--end::Nav-->
+        </div>
+        <!--end::LEFT SIDE MENU-->
+
+        <!--begin::Notifications, Profile, Setting icons-->
+        <div class="aside-footer d-flex flex-column align-items-center flex-column-auto py-4 py-lg-10">
+            <!--begin::Aside Toggle-->
+            <span class="aside-toggle btn btn-icon btn-primary btn-hover-primary shadow-sm" id="kt_aside_toggle"
+                  data-toggle="tooltip" data-placement="right" data-container="body" data-boundary="window"
+                  title="Toggle Aside">
+                    <i class="ki ki-bold-arrow-back icon-sm"></i>
+                </span>
+            <!--end::Aside Toggle-->
+
+
+            <!--begin::Notification-->
+            <a href="#" class="btn btn-icon btn-clean btn-lg mb-1" id="kt_notification_toggle"
+               data-toggle="tooltip" data-placement="right" data-container="body" data-boundary="window"
+               title="Notifications">
+                <i class="flaticon2-bell-2"></i> </a>
+            <!--end::Quick Actions-->
+
+            <!--begin::User-->
+            <a href="#" class="btn btn-icon btn-clean btn-lg w-40px h-40px" id="kt_user_profile_toggle"
+               data-toggle="tooltip" data-placement="right" data-container="body" data-boundary="window"
+               title="User Profile">
+                <i class="flaticon2-user-outline-symbol"></i>
+            </a>
+            <!--end::User-->
+
+            <!--begin::Settings Panel-->
+            <a href="#" class="btn btn-icon btn-clean btn-lg mb-1 position-relative" id="kt_setting_panel_toggle"
+               data-toggle="tooltip" data-placement="right" data-container="body" data-boundary="window"
+               title="Settings">
+                <i class="flaticon2-gear"></i>
+            </a>
+            <!--end::Quick Panel-->
+        </div>
+        <!--end::Notifications, Profile, Setting icons-->
+    </div>
+    <!--end::Primary-->
+
+    <!--begin::TEAM LIST-->
+    <div class="aside-secondary d-flex flex-row-fluid">
+        <!--begin::Workspace-->
+        <div class="aside-workspace scroll scroll-push my-2">
+            <!--begin::Tab Content-->
+            <div class="tab-content">
+                <div th:replace="pages/fragments/team::team">
+
+                </div>
+            </div>
+            <!--end::Tab Content-->
+        </div>
+        <!--end::Workspace-->
+    </div>
+    <!--end::TEAM LIST-->
+</div>
+<!--end::Aside-->
+</body>
+
+</html>

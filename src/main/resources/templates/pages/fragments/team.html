@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<!--begin::Tab Pane-->
+<div th:fragment="team" class="tab-pane p-3 px-lg-7 py-lg-5 fade show active" id="kt_aside_tab_team">
+    <!--begin::Form-->
+    <form class="p-2 p-lg-3">
+        <div class="d-flex">
+            <div class="input-icon h-40px">
+                <input type="text" class="form-control form-control-lg form-control-solid h-40px"
+                       placeholder="Search..." id="generalSearch" />
+                <span>
+                    <span class="svg-icon svg-icon-lg">
+                        <!--begin::Svg Icon | path:assets/media/svg/icons/General/Search.svg-->
+                        <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                xmlns:xlink="http://www.w3.org/1999/xlink" width="24px"
+                                height="24px" viewBox="0 0 24 24" version="1.1">
+                            <g stroke="none" stroke-width="1" fill="none"
+                               fill-rule="evenodd">
+                                <rect x="0" y="0" width="24" height="24" />
+                                <path
+                                        d="M14.2928932,16.7071068 C13.9023689,16.3165825 13.9023689,15.6834175 14.2928932,15.2928932 C14.6834175,14.9023689 15.3165825,14.9023689 15.7071068,15.2928932 L19.7071068,19.2928932 C20.0976311,19.6834175 20.0976311,20.3165825 19.7071068,20.7071068 C19.3165825,21.0976311 18.6834175,21.0976311 18.2928932,20.7071068 L14.2928932,16.7071068 Z"
+                                        fill="#000000" fill-rule="nonzero" opacity="0.3" />
+                                <path
+                                        d="M11,16 C13.7614237,16 16,13.7614237 16,11 C16,8.23857625 13.7614237,6 11,6 C8.23857625,6 6,8.23857625 6,11 C6,13.7614237 8.23857625,16 11,16 Z M11,18 C7.13400675,18 4,14.8659932 4,11 C4,7.13400675 7.13400675,4 11,4 C14.8659932,4 18,7.13400675 18,11 C18,14.8659932 14.8659932,18 11,18 Z"
+                                        fill="#000000" fill-rule="nonzero" />
+                            </g>
+                        </svg>
+                        <!--end::Svg Icon-->
+                    </span>
+                </span>
+            </div>
+
+            <div data-toggle="tooltip" data-placement="right" title="Search">
+                <a href="#"
+                   class="btn btn-icon btn-default btn-hover-primary ml-2 h-40px w-40px flex-shrink-0"
+                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="flaticon2-magnifier-tool"> </i>
+                </a>
+            </div>
+        </div>
+    </form>
+    <!--end::Form-->
+    <div class="p-2 p-lg-3 my-1 my-lg-3 d-flex align-items-center justify-content-between pb-10">
+        <h3 class="font-weight-bold m-0">
+            Teams
+        </h3>
+        <a th:href="@{~/teams}" class="btn btn-xs btn-icon btn-light btn-hover-primary" data-toggle="tooltip" data-placement="right" title="View all teams">
+            <i class="flaticon2-menu-4"></i>
+        </a>
+    </div>
+
+    <!--begin::List-->
+
+    <div class="list list-hover">
+
+        <!--begin::Item-->
+            <div  class="list-item hoverable p-2 p-lg-3 mb-2">
+                <div class="d-flex align-items-center">
+                    <!--begin::Symbol-->
+                    <div class="symbol symbol-40 symbol-light mr-4">
+                        <span class="symbol-label bg-hover-white">
+                            <img th:src="'/assets/media/image/1.jpg'" alt=""
+                                class="h-100 align-self-center" style="border-radius: 0.42rem" />
+                        </span>
+                    </div>
+                    <!--end::Symbol-->
+                    <!--begin::Text-->
+                    <div class="d-flex flex-column flex-grow-1 mr-2">
+                        <span class="text-dark-75 font-size-h6 mb-0" th:text="name"></span>
+                        <a href="#" class="text-muted text-hover-primary font-weight-bold" th:text="name"></a>
+                    </div>
+                </div>
+            </div>
+        <!--end::Item-->
+
+    </div>
+    <!--end::List-->
+</div>
+<!--end::Tab Pane-->
+
+</html>
+

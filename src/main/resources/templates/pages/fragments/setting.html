@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<!--begin::Setting Panel-->
+<div th:fragment="setting" id="kt_setting_panel" class="offcanvas offcanvas-left pt-5 pb-10">
+    <!--begin::Header-->
+    <div class="offcanvas-header offcanvas-header-navs d-flex align-items-center justify-content-between mb-5">
+        <ul class="nav nav-bold nav-tabs nav-tabs-line nav-tabs-line-3x nav-tabs-primary flex-grow-1 px-10" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active" data-toggle="tab" href="#kt_tab_company" >Company</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#kt_tab_okr" >OKR</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#kt_tab_assessment" >Assessment</a>
+            </li>
+        </ul>
+        <div class="offcanvas-close mt-n1 pr-5">
+            <a href="#" class="btn btn-xs btn-icon btn-light btn-hover-primary" id="kt_setting_panel_close">
+                <i class="ki ki-close icon-xs text-muted"></i>
+            </a>
+        </div>
+    </div>
+    <!--end::Header-->
+
+    <!--begin::Content-->
+
+        <div class="tab-content">
+            <!--begin::Tabpane-->
+            <div class="tab-pane fade show pt-3 pr-5 mr-n5 active" id="kt_tab_company" role="tabpanel">
+                <div class="container">
+                    <div class="row gutter-b">
+                        <!--begin::Item-->
+                        <div class="col-6">
+                            <a href="#" class="btn btn-block btn-light btn-hover-primary text-dark-50 text-center py-14 px-5">
+                                <span class="d-block font-weight-bold font-size-h6 mt-2">Company</span>
+                            </a>
+                        </div>
+                        <!--end::Item-->
+                        <!--begin::Item-->
+                        <div class="col-6">
+                            <a th:href="@{/divisions}" class="btn btn-block btn-light btn-hover-primary text-dark-50 text-center py-14 px-5">
+                                <span class="d-block font-weight-bold font-size-h6 mt-2">Divisions</span>
+                            </a>
+                        </div>
+                        <!--end::Item-->
+                    </div>
+                    <div class="row gutter-b">
+                        <!--begin::Item-->
+                        <div class="col-6">
+                            <a href="/teams/list" class="btn btn-block btn-light btn-hover-primary text-dark-50 text-center py-14 px-5">
+                                <span class="d-block font-weight-bold font-size-h6 mt-2">Teams</span>
+                            </a>
+                        </div>
+                        <!--end::Item-->
+                        <!--begin::Item-->
+                        <div class="col-6">
+                            <a href="/member-list" class="btn btn-block btn-light btn-hover-primary text-dark-50 text-center py-14 px-5">
+                                <span class="d-block font-weight-bold font-size-h6 mt-2">Members</span>
+                            </a>
+                        </div>
+                        <!--end::Item-->
+                    </div>
+                    <div class="row gutter-b">
+                        <!--begin::Item-->
+                        <div class="col-6">
+                            <a href="#" class="btn btn-block btn-light btn-hover-primary text-dark-50 text-center py-14 px-5">
+                                <span class="d-block font-weight-bold font-size-h6 mt-2">Audit Log</span>
+                            </a>
+                        </div>
+                        <!--end::Item-->
+
+                    </div>
+                </div>
+            </div>
+            <!--end::Tabpane-->
+
+            <!--begin::Tabpane-->
+            <div class="tab-pane fade pt-2 pr-5 mr-n5" id="kt_tab_okr" role="tabpanel">
+                <div class="container">
+                    <div class="row gutter-b">
+                        <!--begin::Item-->
+                        <div class="col-6">
+                            <a href="#" class="btn btn-block btn-light btn-hover-primary text-dark-50 text-center py-10 px-5">
+                                <span class="d-block font-weight-bold font-size-h6 mt-2">Weekly Check-ins</span>
+                            </a>
+                        </div>
+                        <!--end::Item-->
+                        <!--begin::Item-->
+                        <div class="col-6">
+                            <a th:href="@{/teams}" class="btn btn-block btn-light btn-hover-primary text-dark-50 text-center py-10 px-5">
+                                <span class="d-block font-weight-bold font-size-h6 mt-2">Quarterly</br>OKRs</span>
+                            </a>
+                        </div>
+                        <!--end::Item-->
+                    </div>
+                    <div class="row gutter-b">
+                        <!--begin::Item-->
+                        <div class="col-6">
+                            <a href="#" class="btn btn-block btn-light btn-hover-primary text-dark-50 text-center py-14 px-5">
+                                <span class="d-block font-weight-bold font-size-h6 mt-2">Dictionary</span>
+                            </a>
+                        </div>
+                        <!--end::Item-->
+                        <!--begin::Item-->
+                        <div class="col-6">
+                            <a href="#" class="btn btn-block btn-light btn-hover-primary text-dark-50 text-center py-14 px-5">
+                                <span class="d-block font-weight-bold font-size-h6 mt-2">TBD</span>
+                            </a>
+                        </div>
+                        <!--end::Item-->
+                    </div>
+                    <div class="row gutter-b">
+                        <!--begin::Item-->
+                        <div class="col-6">
+                            <a href="#" class="btn btn-block btn-light btn-hover-primary text-dark-50 text-center py-14 px-5">
+                                <span class="d-block font-weight-bold font-size-h6 mt-2">TBD</span>
+                            </a>
+                        </div>
+                        <!--end::Item-->
+
+                    </div>
+                </div>
+            </div>r
+            <!--end::Tabpane-->
+
+            <!--begin::Tabpane-->
+            <div class="tab-pane fade pt-3 pr-5 mr-n5" id="kt_tab_assessment" role="tabpanel">
+                <div class="container">
+                    <div class="row gutter-b">
+                        <!--begin::Item-->
+                        <div class="col-6">
+                            <a href="#" class="btn btn-block btn-light btn-hover-primary text-dark-50 text-center py-14 px-5">
+                                <span class="d-block font-weight-bold font-size-h6 mt-2">Schedule</span>
+                            </a>
+                        </div>
+                        <!--end::Item-->
+                        <!--begin::Item-->
+                        <div class="col-6">
+                            <a href="#" class="btn btn-block btn-light btn-hover-primary text-dark-50 text-center py-14 px-5">
+                                <span class="d-block font-weight-bold font-size-h6 mt-2">Templates</span>
+                            </a>
+                        </div>
+                        <!--end::Item-->
+                    </div>
+                    <div class="row gutter-b">
+                        <!--begin::Item-->
+                        <div class="col-6">
+                            <a href="#" class="btn btn-block btn-light btn-hover-primary text-dark-50 text-center py-14 px-5">
+                                <span class="d-block font-weight-bold font-size-h6 mt-2">Assessors</span>
+                            </a>
+                        </div>
+                        <!--end::Item-->
+                        <!--begin::Item-->
+                        <div class="col-6">
+                            <a href="#" class="btn btn-block btn-light btn-hover-primary text-dark-50 text-center py-14 px-5">
+                                <span class="d-block font-weight-bold font-size-h6 mt-2">History</span>
+                            </a>
+                        </div>
+                        <!--end::Item-->
+                    </div>
+                    <div class="row gutter-b">
+                        <!--begin::Item-->
+                        <div class="col-6">
+                            <a href="#" class="btn btn-block btn-light btn-hover-primary text-dark-50 text-center py-14 px-10">
+                                <span class="d-block font-weight-bold font-size-h6 mt-2">Promotion</span>
+                            </a>
+                        </div>
+                        <!--end::Item-->
+
+                    </div>
+                </div>
+            </div>
+            <!--end::Tabpane-->
+
+        </div>
+    <!--end::Content-->
+</div>
+<!--end::Setting Panel-->
+
+</html>
+
