@@ -35,6 +35,7 @@ public class AuditListener<U> {
     protected U lastModifiedBy;
 
     @LastModifiedDate
+    // thống nhất cách đặt tên với trường bên trên
     protected Date lastModifiedDate;
 
 }
