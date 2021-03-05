@@ -1,14 +1,19 @@
 package com.codegym.duytan.entity;
 
+import com.codegym.duytan.listener.AuditListener;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.ToString;
 
 import javax.persistence.*;
 
+@EqualsAndHashCode(callSuper = true)
 @Entity
 @Data
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class MemberHistory {
+@ToString
+public class MemberHistory extends AuditListener<String> {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

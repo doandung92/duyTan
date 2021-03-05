@@ -1,18 +1,18 @@
 package com.codegym.duytan.entity;
 
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import com.codegym.duytan.listener.AuditListener;
+import lombok.*;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
+
 @Entity
 @Data
-@AllArgsConstructor
-@NoArgsConstructor
-public class Member {
+@EqualsAndHashCode(callSuper = true)
+@ToString
+public class Member extends AuditListener<String> {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
