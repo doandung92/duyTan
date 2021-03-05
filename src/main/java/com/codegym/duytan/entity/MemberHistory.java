@@ -1,26 +1,25 @@
 package com.codegym.duytan.entity;
 
-
-import lombok.AllArgsConstructor;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotNull;
 
 @Entity
 @Data
-@AllArgsConstructor
-@NoArgsConstructor
-public class Member {
+@JsonInclude(JsonInclude.Include.NON_NULL)
+public class MemberHistory {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer member_id;
+    private Integer history_id;
+
+    @ManyToOne
+    @JoinColumn(name = "member_id",nullable = false)
+    private Member member;
 
     private String name;
 
-    @Column(unique = true, nullable = false)
     private String email;
 
     private String image;
@@ -31,6 +30,7 @@ public class Member {
 
     private String password;
 
-    private boolean use_flag = true;
+    private String justification;
 
+    private boolean use_flag;
 }
