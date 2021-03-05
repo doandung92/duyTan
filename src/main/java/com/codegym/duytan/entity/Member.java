@@ -14,6 +14,7 @@ import javax.validation.constraints.NotNull;
 @ToString
 public class Member extends AuditListener<String> {
 
+    // Xem lại document về các trường
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer member_id;

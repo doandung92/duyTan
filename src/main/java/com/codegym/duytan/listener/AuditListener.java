@@ -15,12 +15,18 @@ import java.util.Date;
 @Data
 @MappedSuperclass
 @EntityListeners(AuditingEntityListener.class)
+// Class này CreatedBy luôn là String. Dùng generic là thừa
+// Class này cũng k phải là 1 listener. Nó chỉ là một class để kế thừa
 public class AuditListener<U> {
+
+    // CreatedBy
 
     @CreatedBy
     @Column(name = "created_by")
+    //CreatedBy
     protected U createBy;
-
+    //CreatedDate
+    //Class Instant sẽ không bị phụ thuộc và timezone
     @CreatedDate
     protected Date createDate;
 

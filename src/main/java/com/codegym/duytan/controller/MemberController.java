@@ -17,13 +17,15 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/members")
+@AllArgsConstructor
 public class MemberController {
 
-    @Autowired
-    private IMemberService memberService;
+//    @Autowired
+//    private IMemberService memberService;
+    // Có thể dùng kết hợp với @AllArgsConstructor cho đẹp code. K cần dùng Autowire
+    private final IMemberService memberService;
 
-
-    @PostMapping("")
+    @PostMapping
     public MemberDto createMember(@RequestBody MemberDto memberDto){
        return memberService.save(memberDto);
     }
