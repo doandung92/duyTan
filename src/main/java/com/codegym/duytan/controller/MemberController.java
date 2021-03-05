@@ -25,6 +25,7 @@ public class MemberController {
     // Có thể dùng kết hợp với @AllArgsConstructor cho đẹp code. K cần dùng Autowire
     private final IMemberService memberService;
 
+    // Chưa validate đầu vào. Chưa xử lý response form không hợp lệ
     @PostMapping
     public MemberDto createMember(@RequestBody MemberDto memberDto){
        return memberService.save(memberDto);
