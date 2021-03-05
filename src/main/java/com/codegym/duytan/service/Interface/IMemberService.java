@@ -1,4 +1,7 @@
 package com.codegym.duytan.service.Interface;
 
-public interface IMemberService {
+import com.codegym.duytan.dto.MemberDto;
+import com.codegym.duytan.entity.Member;
+
+public interface IMemberService extends IService<MemberDto,Integer> {
 }
