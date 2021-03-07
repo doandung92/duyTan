@@ -1,13 +1,11 @@
 package com.codegym.duytan.controller;
 
-import lombok.*;
-import org.springframework.stereotype.*;
 import org.springframework.web.bind.annotation.*;
 
-@Controller
+@RequestMapping("/")
 public class ApplicationController {
 
-    @GetMapping("/")
+    @GetMapping
     public String index() {
         return "index";
     }

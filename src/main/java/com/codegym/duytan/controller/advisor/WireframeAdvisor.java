@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.*;
 public class WireframeAdvisor {
 
     @ModelAttribute("wireframeModel")
-    public WireframeModel getWireFrameTeamList() {
+    public static WireframeModel getWireFrameModel() {
         WireframeModel wireframeModel = new WireframeModel();
         return wireframeModel;
     }
