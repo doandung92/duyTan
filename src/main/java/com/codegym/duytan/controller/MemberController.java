@@ -21,17 +21,10 @@ import java.util.List;
 public class MemberController {
 
     private final IMemberService memberService;
-    // Có thể dùng kết hợp với @AllArgsConstructor cho đẹp code. K cần dùng Autowire
-    // Chưa validate đầu vào. Chưa xử lý response form không hợp lệ
+
     @PostMapping
     public MemberDto createMember(@RequestBody MemberDto memberDto){
        return memberService.save(memberDto);
     }
 
-//    @RequestMapping("/member-list")
-//    public String MainLayout(Model model){
-//        List<MemberDto> members = memberService.findAll();
-//        model.addAttribute("memberList",members);
-//        return
-//    }
 }

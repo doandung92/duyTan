@@ -16,9 +16,9 @@ import java.util.Optional;
 @AllArgsConstructor
 @Transactional
 public class MemberHistoryServiceImpl implements IMemberHistoryService {
+
     private final MemberHistoryRepository memberHistoryRepository;
     private final MapperFacade mapper;
-
 
     @Override
     public List<MemberHistoryDto> findAll() {

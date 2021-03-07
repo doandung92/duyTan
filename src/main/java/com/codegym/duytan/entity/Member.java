@@ -13,7 +13,6 @@ import javax.persistence.*;
 @ToString
 public class Member extends AbstractAuditable {
 
-    // Xem lại document về các trường
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "MEMBER_ID")
@@ -37,7 +36,7 @@ public class Member extends AbstractAuditable {
     @Column(name = "PASSWORD", nullable = false)
     private String password;
 
-    @Column(name = "use_flag")
+    @Column(name = "USE_FLAG")
     private boolean useFlag = true;
 
 }

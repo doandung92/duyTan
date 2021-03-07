@@ -6,5 +6,5 @@ import org.springframework.data.jpa.datatables.repository.DataTablesRepository;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 
-public interface MemberRepository extends JpaRepository<Member, Integer>, JpaSpecificationExecutor<Member>, DataTablesRepository<Member,Integer> {
+public interface MemberRepository extends JpaRepository<Member, Integer>, JpaSpecificationExecutor<Member> {
 }

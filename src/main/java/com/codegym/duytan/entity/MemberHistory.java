@@ -42,7 +42,7 @@ public class MemberHistory extends AbstractAuditable {
     @Column(name = "PASSWORD")
     private String password;
 
-    @Column(name = "JUSTIFICATION")
+    @Column(name = "JUSTIFICATION", nullable = false)
     private String justification;
 
     @Column(name = "USE_FLAG")
