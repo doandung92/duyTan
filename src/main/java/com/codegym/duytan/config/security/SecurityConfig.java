@@ -9,9 +9,9 @@ import org.springframework.stereotype.*;
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
+
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        // Thiếu config này để gọi request từ domain khác
         http.csrf().disable();
         http.authorizeRequests()
                 .antMatchers("/**").permitAll();

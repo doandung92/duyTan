@@ -1,42 +1,31 @@
 package com.codegym.duytan.listener;
 
-import lombok.Data;
-import org.springframework.data.annotation.CreatedBy;
-import org.springframework.data.annotation.CreatedDate;
-import org.springframework.data.annotation.LastModifiedBy;
-import org.springframework.data.annotation.LastModifiedDate;
-import org.springframework.data.jpa.domain.support.AuditingEntityListener;
+import lombok.*;
+import org.springframework.data.annotation.*;
+import org.springframework.data.jpa.domain.support.*;
 
-import javax.persistence.Column;
-import javax.persistence.EntityListeners;
-import javax.persistence.MappedSuperclass;
-import java.time.Instant;
-import java.util.Date;
+import javax.persistence.*;
+import java.time.*;
 
 @Data
 @MappedSuperclass
 @EntityListeners(AuditingEntityListener.class)
-// Class này CreatedBy luôn là String. Dùng generic là thừa
-// Class này cũng k phải là 1 listener. Nó chỉ là một class để kế thừa
 public class AbstractAuditable {
-
-    // CreatedBy
 
     @CreatedBy
     @Column(name = "created_by")
-    //CreatedBy
-    protected String createBy;
-    //CreatedDate
-    //Class Instant sẽ không bị phụ thuộc và timezone
+    protected String createdBy;
+
     @CreatedDate
-    protected Instant createDate;
+    @Column(name = "created_date")
+    protected Instant createdDate;
 
     @LastModifiedBy
     @Column(name = "updated_by")
-    protected String updateBy;
+    protected String updatedBy;
 
     @LastModifiedDate
-    // thống nhất cách đặt tên với trường bên trên
-    protected Instant updateDate;
+    @Column(name = "updated_date")
+    protected Instant updatedDate;
 
 }

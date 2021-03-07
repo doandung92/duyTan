@@ -1,20 +1,17 @@
 package com.codegym.duytan.entity;
 
-
 import com.codegym.duytan.listener.AbstractAuditable;
 import lombok.*;
 
 import javax.persistence.*;
 
-
 @Entity
 @Data
 @EqualsAndHashCode(callSuper = true)
-@ToString
 public class Member extends AbstractAuditable {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "MEMBER_ID")
     private Integer memberId;
 
@@ -27,8 +24,8 @@ public class Member extends AbstractAuditable {
     @Column(name = "IMAGE")
     private String image;
 
-    @Column(name = "ADMIN_FLAG")
-    private boolean adminFlag;
+    @Column(name = "ADMIN_FLAG", nullable = false)
+    private boolean adminFlag = false;
 
     @Column(name = "PHONE")
     private String phoneNumber;

@@ -3,7 +3,6 @@ package com.codegym.duytan.dto;
 import com.codegym.duytan.entity.Member;
 import lombok.Data;
 
-
 @Data
 public class MemberHistoryDto {
 

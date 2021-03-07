@@ -8,15 +8,13 @@ import lombok.ToString;
 
 import javax.persistence.*;
 
-@EqualsAndHashCode(callSuper = true)
 @Entity
 @Data
-@JsonInclude(JsonInclude.Include.NON_NULL)
-@ToString
+@EqualsAndHashCode(callSuper = true)
 public class MemberHistory extends AbstractAuditable {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "HISTORY_ID")
     private Integer historyId;
 
@@ -42,9 +40,9 @@ public class MemberHistory extends AbstractAuditable {
     @Column(name = "PASSWORD")
     private String password;
 
-    @Column(name = "JUSTIFICATION", nullable = false)
-    private String justification;
-
     @Column(name = "USE_FLAG")
     private boolean useFlag;
+
+    @Column(name = "JUSTIFICATION", nullable = false)
+    private String justification;
 }
