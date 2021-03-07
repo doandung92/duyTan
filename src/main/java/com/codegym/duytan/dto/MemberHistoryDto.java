@@ -7,14 +7,14 @@ import lombok.Data;
 @Data
 public class MemberHistoryDto {
 
-    private Integer history_id;
+    private Integer historyId;
     private Member member;
     private String name;
     private String email;
     private String image;
-    private boolean admin_flag;
-    private String phone;
+    private boolean adminFlag;
+    private String phoneNumber;
     private String password;
     private String justification;
-    private boolean use_flag;
+    private boolean useFlag;
 }

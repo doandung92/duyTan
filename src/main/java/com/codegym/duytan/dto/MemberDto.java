@@ -5,12 +5,12 @@ import lombok.Data;
 @Data
 public class MemberDto {
 
-    private Integer member_id;
+    private Integer memberId;
     private String name;
     private String email;
     private String image;
-    private boolean admin_flag;
-    private String phone;
+    private boolean adminFlag;
+    private String phoneNumber;
     private String password;
-    private boolean user_flag;
+    private boolean userFlag;
 }
