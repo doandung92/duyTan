@@ -20,11 +20,8 @@ import java.util.List;
 @AllArgsConstructor
 public class MemberController {
 
-//    @Autowired
-//    private IMemberService memberService;
-    // Có thể dùng kết hợp với @AllArgsConstructor cho đẹp code. K cần dùng Autowire
     private final IMemberService memberService;
-
+    // Có thể dùng kết hợp với @AllArgsConstructor cho đẹp code. K cần dùng Autowire
     // Chưa validate đầu vào. Chưa xử lý response form không hợp lệ
     @PostMapping
     public MemberDto createMember(@RequestBody MemberDto memberDto){

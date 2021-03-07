@@ -10,6 +10,7 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 import javax.persistence.Column;
 import javax.persistence.EntityListeners;
 import javax.persistence.MappedSuperclass;
+import java.time.Instant;
 import java.util.Date;
 
 @Data
@@ -17,25 +18,25 @@ import java.util.Date;
 @EntityListeners(AuditingEntityListener.class)
 // Class này CreatedBy luôn là String. Dùng generic là thừa
 // Class này cũng k phải là 1 listener. Nó chỉ là một class để kế thừa
-public class AuditListener<U> {
+public class AbstractAuditable {
 
     // CreatedBy
 
     @CreatedBy
     @Column(name = "created_by")
     //CreatedBy
-    protected U createBy;
+    protected String createBy;
     //CreatedDate
     //Class Instant sẽ không bị phụ thuộc và timezone
     @CreatedDate
-    protected Date createDate;
+    protected Instant createDate;
 
     @LastModifiedBy
     @Column(name = "updated_by")
-    protected U lastModifiedBy;
+    protected String updateBy;
 
     @LastModifiedDate
     // thống nhất cách đặt tên với trường bên trên
-    protected Date lastModifiedDate;
+    protected Instant updateDate;
 
 }

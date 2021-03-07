@@ -1,6 +1,6 @@
 package com.codegym.duytan.entity;
 
-import com.codegym.duytan.listener.AuditListener;
+import com.codegym.duytan.listener.AbstractAuditable;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -13,29 +13,38 @@ import javax.persistence.*;
 @Data
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @ToString
-public class MemberHistory extends AuditListener<String> {
+public class MemberHistory extends AbstractAuditable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer history_id;
+    @Column(name = "HISTORY_ID")
+    private Integer historyId;
 
     @ManyToOne
-    @JoinColumn(name = "member_id",nullable = false)
+    @JoinColumn(name = "MEMBER_ID",nullable = false)
     private Member member;
 
+    @Column(name = "NAME")
     private String name;
 
+    @Column(name = "EMAIL")
     private String email;
 
+    @Column(name = "IMAGE")
     private String image;
 
-    private boolean admin_flag;
+    @Column(name = "ADMIN_FLAG")
+    private boolean adminFlag;
 
-    private String phone;
+    @Column(name = "PHONE")
+    private String phoneNumber;
 
+    @Column(name = "PASSWORD")
     private String password;
 
+    @Column(name = "JUSTIFICATION")
     private String justification;
 
-    private boolean use_flag;
+    @Column(name = "USE_FLAG")
+    private boolean useFlag;
 }

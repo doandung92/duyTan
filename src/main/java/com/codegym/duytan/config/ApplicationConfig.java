@@ -6,11 +6,14 @@ import ma.glasnost.orika.MapperFactory;
 import ma.glasnost.orika.impl.DefaultMapperFactory;
 import org.springframework.context.annotation.*;
 import org.springframework.data.domain.AuditorAware;
+import org.springframework.data.jpa.datatables.repository.DataTablesRepositoryFactoryBean;
 import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.web.servlet.config.annotation.*;
 
 @Configuration
 @EnableJpaAuditing(auditorAwareRef = "auditorAware")
+@EnableJpaRepositories(repositoryFactoryBeanClass = DataTablesRepositoryFactoryBean.class)
 public class ApplicationConfig implements WebMvcConfigurer {
 
     @Bean

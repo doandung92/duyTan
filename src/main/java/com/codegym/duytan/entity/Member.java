@@ -1,37 +1,43 @@
 package com.codegym.duytan.entity;
 
 
-import com.codegym.duytan.listener.AuditListener;
+import com.codegym.duytan.listener.AbstractAuditable;
 import lombok.*;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotNull;
 
 
 @Entity
 @Data
 @EqualsAndHashCode(callSuper = true)
 @ToString
-public class Member extends AuditListener<String> {
+public class Member extends AbstractAuditable {
 
     // Xem lại document về các trường
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer member_id;
+    @Column(name = "MEMBER_ID")
+    private Integer memberId;
 
+    @Column(name = "NAME", nullable = false)
     private String name;
 
-    @Column(unique = true, nullable = false)
+    @Column(name = "EMAIL",unique = true, nullable = false)
     private String email;
 
+    @Column(name = "IMAGE")
     private String image;
 
-    private boolean admin_flag;
+    @Column(name = "ADMIN_FLAG")
+    private boolean adminFlag;
 
-    private String phone;
+    @Column(name = "PHONE")
+    private String phoneNumber;
 
+    @Column(name = "PASSWORD", nullable = false)
     private String password;
 
-    private boolean use_flag = true;
+    @Column(name = "use_flag")
+    private boolean useFlag = true;
 
 }
