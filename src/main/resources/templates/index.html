@@ -13,7 +13,16 @@
 <!--Main content of every page-->
 <div layout:fragment="content" class="container">
     <h1>Content of individual screen will be implemented in here</h1>
+    <!--begin: Datatable-->
+    <div class="datatable datatable-bordered datatable-head-custom" id="kt_datatable">
+    </div>
+    <!--end: Datatable-->
 </div>
+
+<th:block layout:fragment="script">
+    <script th:src="@{/assets/js/custom/members/member-list.js}">
+    </script>
+</th:block>
 
 </body>
 

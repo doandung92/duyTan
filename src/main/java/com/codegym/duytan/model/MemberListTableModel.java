@@ -1,10 +1,11 @@
-package com.codegym.duytan.dto;
+package com.codegym.duytan.model;
 
 import lombok.Data;
+import lombok.ToString;
 
 @Data
-public class MemberDto {
-
+@ToString
+public class MemberListTableModel {
     private Integer memberId;
     private String name;
     private String email;

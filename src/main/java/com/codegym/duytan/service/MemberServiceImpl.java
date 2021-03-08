@@ -2,6 +2,7 @@ package com.codegym.duytan.service;
 
 import com.codegym.duytan.dto.MemberDto;
 import com.codegym.duytan.entity.Member;
+import com.codegym.duytan.model.MemberListTableModel;
 import com.codegym.duytan.repository.MemberRepository;
 import com.codegym.duytan.service.Interface.IMemberService;
 import lombok.AllArgsConstructor;
@@ -45,5 +46,11 @@ public class MemberServiceImpl implements IMemberService {
         Member member = mapper.map(memberDto,Member.class);
         memberRepository.save(member);
         return mapper.map(member,MemberDto.class);
+    }
+
+    @Override
+    public List<MemberListTableModel> buildMemberListTableModel() {
+        List<Member> members = memberRepository.findAll();
+        return mapper.mapAsList(members,MemberListTableModel.class);
     }
 }

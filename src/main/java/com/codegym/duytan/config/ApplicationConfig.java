@@ -13,7 +13,6 @@ import org.springframework.web.servlet.config.annotation.*;
 
 @Configuration
 @EnableJpaAuditing(auditorAwareRef = "auditorAware")
-@EnableJpaRepositories(repositoryFactoryBeanClass = DataTablesRepositoryFactoryBean.class)
 public class ApplicationConfig implements WebMvcConfigurer {
 
     @Bean
