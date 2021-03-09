@@ -36,4 +36,8 @@ public class Member extends AbstractAuditable {
     @Column(name = "USE_FLAG")
     private boolean useFlag = true;
 
+    private String username;
+
+    private String roles;
+
 }
