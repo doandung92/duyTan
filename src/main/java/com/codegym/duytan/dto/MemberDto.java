@@ -1,8 +1,11 @@
 package com.codegym.duytan.dto;
 
+import com.codegym.duytan.constant.UseFlag;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Data;
 
 @Data
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class MemberDto {
 
     private Integer memberId;
@@ -12,5 +15,5 @@ public class MemberDto {
     private boolean adminFlag;
     private String phoneNumber;
     private String password;
-    private boolean userFlag = true;
+    private String useFlag = UseFlag.Y;
 }

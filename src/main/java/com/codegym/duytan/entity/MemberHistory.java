@@ -11,7 +11,6 @@ import javax.persistence.*;
 @EqualsAndHashCode(callSuper = true)
 @Entity
 @Data
-@JsonInclude(JsonInclude.Include.NON_NULL)
 @ToString
 public class MemberHistory extends AbstractAuditable {
 

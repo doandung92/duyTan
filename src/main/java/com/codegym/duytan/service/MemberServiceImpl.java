@@ -2,12 +2,12 @@ package com.codegym.duytan.service;
 
 import com.codegym.duytan.dto.MemberDto;
 import com.codegym.duytan.entity.Member;
-import com.codegym.duytan.model.MemberListTableModel;
+import com.codegym.duytan.model.MemberListModel;
 import com.codegym.duytan.repository.MemberRepository;
 import com.codegym.duytan.service.Interface.IMemberService;
+import com.codegym.duytan.service.specification.MemberQuery;
 import lombok.AllArgsConstructor;
 import ma.glasnost.orika.MapperFacade;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -21,6 +21,7 @@ public class MemberServiceImpl implements IMemberService {
 
     private final MemberRepository memberRepository;
     private final MapperFacade mapper;
+    private final MemberQuery memberQuery;
 
 
     @Override
@@ -49,8 +50,13 @@ public class MemberServiceImpl implements IMemberService {
     }
 
     @Override
-    public List<MemberListTableModel> buildMemberListTableModel() {
+    public List<MemberDto> findActiveMembersOnly() {
+        return mapper.mapAsList(memberRepository.findAll(memberQuery.findActiveMembers()),MemberDto.class);
+    }
+
+    @Override
+    public List<MemberListModel> buildListMemberModel() {
         List<Member> members = memberRepository.findAll();
-        return mapper.mapAsList(members,MemberListTableModel.class);
+        return mapper.mapAsList(members, MemberListModel.class);
     }
 }

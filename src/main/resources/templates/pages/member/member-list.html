@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{pages/layout/main_layout.html}">>
+<head>
+    <meta charset="UTF-8">
+    <title>Member List</title>
+    <style>
+        #menu li {
+            display: inline-block;
+            margin-left: 5px;
+            height: 50px;
+            float: right;
+        }
+    </style>
+</head>
+<body>
+
+<!--Main content of every page-->
+<div layout:fragment="content" class="container">
+    <h1 class="total-header"></h1>
+    <!--begin: Datatable-->
+
+    <!--    <ul id="menu">-->
+    <!--        <li>-->
+    <!--            <button id="kt_reset" class="btn btn-primary">Reset</button>-->
+    <!--        </li>-->
+    <!--        <li>-->
+    <!--            <button id="kt_search" class="btn btn-primary">Search</button>-->
+    <!--        </li>-->
+    <!--        <li>-->
+    <!--            <div class="form-group" style="width: 150px;">-->
+    <!--                <select class="form-control datatable-input" id="kt_datatable_search_active" name="useFlag">-->
+    <!--                    <option value="">All</option>-->
+    <!--                    <option value="true">Active</option>-->
+    <!--                    <option value="false">inActive</option>-->
+    <!--                </select>-->
+    <!--            </div>-->
+    <!--        </li>-->
+    <!--        <li>-->
+    <!--            <div class="input-group rounded" style="width: 150px;" >-->
+    <!--                <input type="text" class="form-control rounded datatable-input" id="kt_datatable_search_name" name="name" placeholder="Search..." aria-label="Search"-->
+    <!--                       aria-describedby="search-addon"/>-->
+    <!--            </div>-->
+    <!--        </li>-->
+    <!--    </ul>-->
+
+    <div class="mb-7">
+        <div class="row align-items-center">
+            <div class="col-lg-9 col-xl-8">
+                <div class="row align-items-center">
+                    <div class="col-lg-3  mb-lg-0 mb-6">
+                        <label>Name</label>
+                        <input type="text" class="form-control datatable-input"
+                               placeholder="Search..." id="kt_datatable_search_name"
+                               data-col-index="0" name="name"/>
+
+                    </div>
+                    <div class="col-lg-3  mb-lg-0 mb-6">
+                        <label>Active</label>
+                        <select class="form-control datatable-input"
+                                id="kt_datatable_search_active"
+                                data-col-index="1"
+                                name="useFlag">
+                            <option value="" style="color: grey">Choose...</option>
+                            <option value="Y">Active</option>
+                            <option value="N">inActive</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-xl-4 mt-5 pt-8 mt-lg-0">
+                <button class="btn btn-primary btn-primary--icon" id="kt_search">
+													<span>
+														<i class="la la-search"></i>
+														<span>Search</span>
+													</span>
+                </button>
+                    <button id="kt_reset" class="btn btn-primary">
+                        <span>
+                            <i class="la la-close"></i>
+                            <span>Reset</span>
+                         </span>
+                    </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="datatable datatable-bordered datatable-head-custom" id="kt_datatable">
+    </div>
+    <!--end: Datatable-->
+</div>
+
+<th:block layout:fragment="script">
+    <script th:src="@{/assets/js/custom/members/member-list.js}">
+    </script>
+</th:block>
+
+</body>
+</html>

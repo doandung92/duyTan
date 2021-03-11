@@ -1,11 +1,15 @@
 package com.codegym.duytan.model;
 
+import com.codegym.duytan.constant.UseFlag;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Data;
 import lombok.ToString;
 
 @Data
 @ToString
-public class MemberListTableModel {
+@JsonInclude(JsonInclude.Include.NON_NULL)
+public class MemberListModel {
+
     private Integer memberId;
     private String name;
     private String email;
@@ -13,5 +17,5 @@ public class MemberListTableModel {
     private boolean adminFlag;
     private String phoneNumber;
     private String password;
-    private boolean userFlag = true;
+    private String useFlag = UseFlag.Y;
 }

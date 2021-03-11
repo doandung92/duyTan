@@ -1,6 +1,7 @@
 package com.codegym.duytan.entity;
 
 
+import com.codegym.duytan.constant.UseFlag;
 import com.codegym.duytan.listener.AbstractAuditable;
 import lombok.*;
 
@@ -37,6 +38,6 @@ public class Member extends AbstractAuditable {
     private String password;
 
     @Column(name = "USE_FLAG")
-    private boolean useFlag = true;
+    private String useFlag = UseFlag.Y;
 
 }

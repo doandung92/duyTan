@@ -12,17 +12,21 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 
-@RestController
+@Controller
 @RequestMapping("/members")
 @AllArgsConstructor
 public class MemberController {
 
     private final IMemberService memberService;
 
-    @PostMapping
-    public MemberDto createMember(@RequestBody MemberDto memberDto){
-       return memberService.save(memberDto);
-    }
+//    @PostMapping
+//    public MemberDto createMember(@RequestBody MemberDto memberDto){
+//       return memberService.save(memberDto);
+//    }
 
+    @GetMapping("")
+    public String index() {
+        return "pages/member/member-list";
+    }
 
 }
